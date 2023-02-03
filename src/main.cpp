@@ -12,7 +12,7 @@
 // [Name]               [Type]        [Port(s)]
 // Controller1          controller                    
 // shooter              motor_group   6, 7            
-// rightDrive           motor_group   2, 10           
+// rightDrive           motor_group   8, 10           
 // leftDrive            motor_group   1, 9            
 // indexer              digital_out   A               
 // intake               motor_group   4, 5            
@@ -121,11 +121,11 @@ void shooterMAX() {
     indexer.set(false);
     Brain.Screen.print("AutoFirePushout");
     Brain.Screen.newLine();
-    wait(0.6, seconds);
+    wait(0.85, seconds);
     indexer.set(true);
     Brain.Screen.print("AutoFirePushIn");
     Brain.Screen.newLine();
-    wait(0.125, seconds);
+    wait(0.25, seconds);
   }
 
 indexer.set(true);
@@ -146,11 +146,11 @@ void shooterMID() {
     indexer.set(false);
     Brain.Screen.print("AutoFirePushout");
     Brain.Screen.newLine();
-    wait(0.6, seconds);
+    wait(0.85, seconds);
     indexer.set(true);
     Brain.Screen.print("AutoFirePushIn");
     Brain.Screen.newLine();
-    wait(0.125, seconds);
+    wait(0.25, seconds);
   }
 
 indexer.set(true);
@@ -170,11 +170,11 @@ void shooterMIN() {
     indexer.set(false);
     Brain.Screen.print("AutoFirePushout");
     Brain.Screen.newLine();
-    wait(0.6, seconds);
+    wait(0.85, seconds);
     indexer.set(true);
     Brain.Screen.print("AutoFirePushIn");
     Brain.Screen.newLine();
-    wait(0.125, seconds);
+    wait(0.25, seconds);wait(0.25, seconds);
   }
 
 indexer.set(true);
@@ -266,11 +266,11 @@ void autoFire() {
     indexer.set(false);
     Brain.Screen.print("AutoFirePushout");
     Brain.Screen.newLine();
-    wait(0.6, seconds);
-    indexer.set(true);
+    wait(0.85, seconds);
+    indexer.set(true); 
     Brain.Screen.print("AutoFirePushIn");
     Brain.Screen.newLine();
-    wait(0.125, seconds);
+    wait(0.25, seconds);
   }
 
 indexer.set(true);
