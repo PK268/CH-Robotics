@@ -158,27 +158,13 @@ Brain.Screen.print("AutoFirePushIn");
 shooter.stop();
 }
 
+//shooterINNN
 void shooterMIN() {
-  if(Controller1.ButtonDown.pressing()) {
-    //shooter.setVelocity(87.5, percent);
-    shooter.spin(forward, 9, voltageUnits::volt);
-  }
-
-  wait(1, sec);
 
   while(Controller1.ButtonDown.pressing()) {
-    indexer.set(false);
-    Brain.Screen.print("AutoFirePushout");
-    Brain.Screen.newLine();
-    wait(0.85, seconds);
-    indexer.set(true);
-    Brain.Screen.print("AutoFirePushIn");
-    Brain.Screen.newLine();
-    wait(0.25, seconds);wait(0.25, seconds);
+        shooter.spin(forward, -11, voltageUnits::volt);
   }
-
-indexer.set(true);
-Brain.Screen.print("AutoFirePushIn");
+  
 shooter.stop();
 }
 
@@ -279,6 +265,30 @@ shooter.stop();
 
 }
 
+void fireAllShots() {
+
+  shooter.spin(forward, 7.5, voltageUnits::volt);
+  wait(1, sec);
+
+  for(int i = 0; i < 3; i++) {
+
+    indexer.set(false);
+    Brain.Screen.print("fireAllPushout");
+    Brain.Screen.newLine();
+    wait(0.85, seconds);
+    indexer.set(true); 
+    Brain.Screen.print("fireAllPushIn");
+    Brain.Screen.newLine();
+    wait(0.25, seconds);
+
+}
+
+indexer.set(true);
+Brain.Screen.print("fireAllPushIn");
+shooter.stop();
+
+}
+
 /*---------------------------------------------------------------------------*/
 /*                          Pre-Autonomous Functions                         */
 /*                                                                           */
@@ -312,7 +322,7 @@ void autonomous(void) {
   // Insert autonomous user code here.
   // ..........................................................................
   
-  /*
+  //Fire Low Goal Roller Side
   rollerChange();
   driveForwardSlowly();
   wait(2.3, sec);
@@ -327,8 +337,10 @@ void autonomous(void) {
   rightDrive.spin(reverse);
   wait(0.825, sec);
   stopMovement();
-  */
-
+  fireAllShots();
+  
+  //Fire High Goal Roller Side
+/*
   leftDrive.spin(forward, 50, pct);
   rightDrive.spin(forward, 50, pct);
   
@@ -345,7 +357,7 @@ intake.setVelocity(100, percent);
     intake.stop();
     intake.setStopping(coast);
         //shooter.setVelocity(87.5, percent);
-        shooter.spin(forward, 10, voltageUnits::volt);
+        shooter.spin(forward, 11.5, voltageUnits::volt);
         wait(2.5, seconds);
 indexer.set(false);
       Brain.Screen.print("AutoFirePushout");
@@ -367,6 +379,9 @@ indexer.set(false);
 
 shooter.setStopping(coast);
     shooter.stop();
+
+}
+*/
 
 }
 
