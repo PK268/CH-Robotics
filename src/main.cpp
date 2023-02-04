@@ -339,6 +339,36 @@ void autonomous(void) {
   stopMovement();
   fireAllShots();
   
+      //Fire Low Goal !Roller Side
+      /*
+      driveForwardSlowly();
+        wait(2.5, sec);
+        stopMovement();
+        wait(0.2, sec);
+        leftDrive.setVelocity(-20.0, percent);
+        rightDrive.setVelocity(-20.0, percent);
+        leftDrive.spin(reverse);
+        rightDrive.spin(forward);
+        wait(0.78, sec);
+        stopMovement();
+        rollerChange();
+        driveForwardSlowly();
+        wait(2.5, sec);
+        stopMovement();
+        wait(0.2, sec);
+        driveBackSlowly();
+        wait(1, sec);
+        stopMovement();
+        leftDrive.setVelocity(20.0, percent);
+        rightDrive.setVelocity(20.0, percent);
+        leftDrive.spin(forward);
+        rightDrive.spin(reverse);
+        wait(0.825, sec);
+        stopMovement();
+        fireAllShots();
+      */
+
+
   //Fire High Goal Roller Side
 /*
   leftDrive.spin(forward, 50, pct);
